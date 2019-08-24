@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2E548E230D51A900C025EF /* ManLyricsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2E548D230D51A900C025EF /* ManLyricsTableViewController.swift */; };
 		AAE13EC72305622C00E1933F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EC62305622C00E1933F /* AppDelegate.swift */; };
 		AAE13EC92305622C00E1933F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EC82305622C00E1933F /* SceneDelegate.swift */; };
-		AAE13ECB2305622C00E1933F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13ECA2305622C00E1933F /* FirstViewController.swift */; };
 		AAE13ECD2305622C00E1933F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13ECC2305622C00E1933F /* SecondViewController.swift */; };
 		AAE13ED02305622C00E1933F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE13ECE2305622C00E1933F /* Main.storyboard */; };
 		AAE13ED22305622E00E1933F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE13ED12305622E00E1933F /* Assets.xcassets */; };
 		AAE13ED52305622E00E1933F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE13ED32305622E00E1933F /* LaunchScreen.storyboard */; };
+		AAE13EDD23056C3D00E1933F /* LyricsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EDC23056C3D00E1933F /* LyricsTableViewController.swift */; };
+		AAE13EDF23056CA500E1933F /* JsonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EDE23056CA500E1933F /* JsonAPI.swift */; };
+		AAE13EE1230AC92800E1933F /* MojimTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE13EE0230AC92800E1933F /* MojimTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA2E548D230D51A900C025EF /* ManLyricsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManLyricsTableViewController.swift; sourceTree = "<group>"; };
 		AAE13EC32305622C00E1933F /* mojimAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mojimAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE13EC62305622C00E1933F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE13EC82305622C00E1933F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AAE13ECA2305622C00E1933F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		AAE13ECC2305622C00E1933F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		AAE13ECF2305622C00E1933F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE13ED12305622E00E1933F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE13ED42305622E00E1933F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAE13ED62305622E00E1933F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE13EDC23056C3D00E1933F /* LyricsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsTableViewController.swift; sourceTree = "<group>"; };
+		AAE13EDE23056CA500E1933F /* JsonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAPI.swift; sourceTree = "<group>"; };
+		AAE13EE0230AC92800E1933F /* MojimTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MojimTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,12 @@
 			children = (
 				AAE13EC62305622C00E1933F /* AppDelegate.swift */,
 				AAE13EC82305622C00E1933F /* SceneDelegate.swift */,
-				AAE13ECA2305622C00E1933F /* FirstViewController.swift */,
 				AAE13ECC2305622C00E1933F /* SecondViewController.swift */,
 				AAE13ECE2305622C00E1933F /* Main.storyboard */,
+				AAE13EDE23056CA500E1933F /* JsonAPI.swift */,
+				AAE13EDC23056C3D00E1933F /* LyricsTableViewController.swift */,
+				AA2E548D230D51A900C025EF /* ManLyricsTableViewController.swift */,
+				AAE13EE0230AC92800E1933F /* MojimTableViewCell.swift */,
 				AAE13ED12305622E00E1933F /* Assets.xcassets */,
 				AAE13ED32305622E00E1933F /* LaunchScreen.storyboard */,
 				AAE13ED62305622E00E1933F /* Info.plist */,
@@ -141,9 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE13EE1230AC92800E1933F /* MojimTableViewCell.swift in Sources */,
+				AAE13EDF23056CA500E1933F /* JsonAPI.swift in Sources */,
+				AAE13EDD23056C3D00E1933F /* LyricsTableViewController.swift in Sources */,
 				AAE13ECD2305622C00E1933F /* SecondViewController.swift in Sources */,
-				AAE13ECB2305622C00E1933F /* FirstViewController.swift in Sources */,
 				AAE13EC72305622C00E1933F /* AppDelegate.swift in Sources */,
+				AA2E548E230D51A900C025EF /* ManLyricsTableViewController.swift in Sources */,
 				AAE13EC92305622C00E1933F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
