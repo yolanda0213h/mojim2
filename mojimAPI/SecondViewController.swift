@@ -16,8 +16,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var lyricLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-         if let urlStr = String( "https://www.googleapis.com/customsearch/v1?cx=014436186619858147575:7btb6tfbffm&key=AIzaSyCMMrMmu9kj1Se3ZoK6_NRdWlupTw6yUA4&q=" + singer! + "&siteSearch=mojim.com").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        // key9
+         if let urlStr = String( "https://www.googleapis.com/customsearch/v1?cx=014436186619858147575:7btb6tfbffm&key=AIzaSyC6nxpw0jRP9c9vd_oKScmbWmSLUeN7xJw&q=" + singer! + "&siteSearch=mojim.com").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         {
                     
                     if let url = URL(string: urlStr) {
