@@ -12,19 +12,46 @@ class LyricsTableViewController: UITableViewController {
 
     
     let singerLady = ["梁靜茹","戴佩妮","蔡依林"]
+    var mojimItems:[Item?] = []
     
+    let key = "AIzaSyC6nxpw0jRP9c9vd_oKScmbWmSLUeN7xJw"
+    //key 9
     var lyricGroup:[Lyrics?] = []
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // API
+        for i in 0...singerLady.count-1 {
+        if let urlStr = String( "https://www.googleapis.com/customsearch/v1?cx=014436186619858147575:7btb6tfbffm&key=\(key)&q=\(singerLady[i])&siteSearch=mojim.com").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        {
+                    
+                    if let url = URL(string: urlStr) {
+                    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                        let decoder = JSONDecoder()
+                        if let data = data, let mojimJson = try? decoder.decode(Mojim.self, from: data){
+                            print(mojimJson.items.count)
+                            
+                            for j in 0...mojimJson.items.count-1 {
+                                self.mojimItems.append(mojimJson.items[j])
+                                
+                                let songs = mojimJson.items[j].title
+                                let lyrics = mojimJson.items[j].snippet
+                                self.lyricGroup.append(Lyrics(singer: self.singerLady[i], song: songs, lyric: lyrics, sectionID: i, rowID: j))
+                            }
+                            print(url)
+                            
+                        }
+                        print(self.lyricGroup[2]?.rowID)
+                        print(self.lyricGroup[2]?.song)
+                        print(self.mojimItems[2]?.title)
+                        print(self.mojimItems.count)
+                    }
+                    task.resume()
+                        }
+            }}
+        
     }
 
     // MARK: - Table view data source
@@ -46,42 +73,11 @@ class LyricsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ladySongsCell", for: indexPath)
-        //key1
-        if let urlStr = String( "https://www.googleapis.com/customsearch/v1?cx=014436186619858147575:7btb6tfbffm&key=AIzaSyDa01sgwqqUuVzv73Gd2RBFdiqGV5192As&q=" + singerLady[indexPath.section] + "&siteSearch=mojim.com").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-{
-            
-            if let url = URL(string: urlStr) {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                let decoder = JSONDecoder()
-                if let data = data, let mojimJson = try? decoder.decode(Mojim.self, from: data){
-                    
-                    let songs = mojimJson.items[indexPath.row].title
-                    let songName = songs.components(separatedBy: "歌詞")
-
-                    /*
-                    let lyrics = mojimJson.items[indexPath.row].snippet
-                    self.lyricGroup.append(Lyrics(singer: self.singerLady[indexPath.section], song: songs, lyric: lyrics, sectionID: indexPath.section, rowID: indexPath.row))
-                    print(self.lyricGroup.count)
-                    */
-                    DispatchQueue.main.async {
-                    /*if songs.contains("專輯"){
-                        //tableView.deleteRows(at: [indexPath], with: .automatic)
-                        cell.removeFromSuperview()
-                    }else if songs.contains("收藏"){
-                        cell.removeFromSuperview()
-                    }
-                    else {
-                        cell.textLabel?.text = songName[0]
-                    }*/
-                        cell.textLabel?.text = songName[0]
-
-                    }
-                    
-                }
-            }
-            task.resume()
-                }
-        }
+        
+        //cell.textLabel?.text = mojimItems[indexPath.row]?.title
+        //DispatchQueue.main.async {
+        
+        //}
         
         return cell
     }
